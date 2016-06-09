@@ -1,0 +1,20 @@
+<?php
+$generated_string = '';
+if(isset($_POST['name']) && !empty($_POST['name']))
+  $generated_string = getnumber($_POST['name']);
+?>
+<form method="post">
+<p>Enter Name:</p>
+<input type="text" name="name" value="" size="32">
+<input type="submit" name="btnSubmit" value="Submit">
+</form>
+<?php
+if($generated_string!='')
+	echo "Answer is: ". $generated_string;
+
+function getnumber($name)
+{
+  $random_number=rand(6, 15);
+  return $name." ".$random_number;
+}
+?>
